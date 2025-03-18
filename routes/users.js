@@ -32,7 +32,9 @@ module.exports = app => {
 
         db.insert(req.body, (err, user) => {
             if (err) {
+                console.log(req.body)
                 app.utils.error.send(err, req, res);
+                
             } else {
                 res.status(200).json(user);
             }
